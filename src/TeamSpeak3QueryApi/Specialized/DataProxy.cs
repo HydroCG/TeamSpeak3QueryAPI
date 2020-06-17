@@ -18,6 +18,7 @@ namespace TeamSpeak3QueryApi.Net.Specialized
             [typeof(ReasonId)] = new EnumTypeCaster<ReasonId>(),
             [typeof(ClientType)] = new EnumTypeCaster<ClientType>(),
             [typeof(ServerGroupType)] = new EnumTypeCaster<ServerGroupType>(),
+            [typeof(ChannelGroupType)] = new EnumTypeCaster<ChannelGroupType>(),
             [typeof(TimeSpan)] = new TimeSpanTypeCaster(),
             [typeof(DateTime)] = new DateTimeTypeCaster(),
             [typeof(long)] = new Int64TypeCaster(),

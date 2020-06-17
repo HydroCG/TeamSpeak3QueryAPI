@@ -515,7 +515,7 @@ namespace TeamSpeak3QueryApi.Net.Specialized
 
         #region Server Methods
 
-        #region GetServers
+        #region Listing Methods
 
         public async Task<IReadOnlyList<GetServerListInfo>> GetServers()
         {
@@ -534,6 +534,16 @@ namespace TeamSpeak3QueryApi.Net.Specialized
         {
             var res = await Client.Send("servergrouplist").ConfigureAwait(false);
             return DataProxy.SerializeGeneric<GetServerGroupListInfo>(res);
+        }
+
+        /// <summary>
+        /// Retrieves a list of client groups from the connected Teamspeak server.
+        /// </summary>
+        /// <returns>A list of <see cref="GetChannelGroupListInfo"/> retrieved from the teamspeak server.</returns>
+        public async Task<IReadOnlyList<GetChannelGroupListInfo>> GetChannelGroups()
+        {
+            var res = await Client.Send("channelgrouplist").ConfigureAwait(false);
+            return DataProxy.SerializeGeneric<GetChannelGroupListInfo>(res);
         }
 
         public async Task<IReadOnlyList<GetServerGroupClientList>> GetServerGroupClientList(int serverGroupDatabaseId)
